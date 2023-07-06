@@ -1,0 +1,298 @@
+{
+  "list": [
+    {
+      "name": "To Tallon Overworld North",
+      "edges": [
+        {"name": "Ruins Entrance", "direction": "north"}
+      ]
+    },
+    {
+      "name": "Ruins Entrance",
+      "edges": [
+        {"name": "Main Plaza", "direction": "north"}
+      ]
+    },
+    {
+      "name": "Main Plaza",
+      "edges": [
+        {"name": "Nursery Access", "direction": "north"},
+        {"name": "Ruined Fountain Access", "direction": "east"},
+        {"name": "Ruined Shrine Access", "direction": "west"},
+        {"name": "Ruins Entrance", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Ruined Shrine Access",
+        "edges": [
+            {"name": "Main Plaza", "direction": "east"},
+            {"name": "Ruined Shrine", "direction": "west"}
+        ]
+    },
+    {
+      "name": "Ruined Shrine",
+        "edges": [
+            {"name": "Ruined Shrine Access", "direction": "east"},
+            {"name": "Tower of Light Access", "direction": "west"}
+        ]
+    },
+    {
+      "name": "Tower of Light Access",
+        "edges": [
+            {"name": "Ruined Shrine", "direction": "east"},
+            {"name": "Tower of Light", "direction": "south"}
+        ]
+    },
+    {
+      "name": "Tower of Light",
+      "edges": [
+        {
+          "name": "Tower of Light Access",
+          "direction": "north"
+        },
+        {
+          "name": "Tower Chamber",
+          "direction": "south"
+        }
+      ]
+    },
+    {
+      "name": "Nursery Access",
+      "edges": [
+        {"name": "Main Plaza", "direction": "south"},
+        {"name": "Eyon Tunnel", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Eyon Tunnel",
+      "edges": [
+          {"name": "Nursery Access", "direction": "east"},
+          {"name": "Ruined Nursery", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Ruined Nursery",
+      "edges": [
+        {"name": "North Atrium", "direction": "north"},
+        {"name": "Save Station 1", "direction": "west"}
+      ]
+    },
+    {
+      "name": "North Atrium",
+      "edges": [
+        {"name": "Ruined Gallery", "direction": "north"},
+        {"name": "Ruined Nursery", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Ruined Gallery",
+      "edges": [
+        {"name": "Totem Access", "direction": "north"},
+        {"name": "Map Station", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Totem Access",
+      "edges": [
+        {"name": "Hive Totem", "direction": "east"},
+        {"name": "Ruined Gallery", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Hive Totem",
+      "edges": [
+        {"name": "Transport Access North", "direction": "north"},
+        {"name": "Totem Access", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Transport Access North",
+      "edges": [
+        {"name": "To Magmoor Caverns North", "direction": "east"},
+        {"name": "Hive Totem", "direction": "south"}
+      ]
+    },
+    {
+      "name": "To Magmoor Caverns North",
+      "edges": [
+        {"name": "Transport Access North", "direction": "west"},
+        {"name": "Sun Tower", "direction": "east"},
+        {"name": "Vault Access", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Vault Access",
+      "edges": [
+        {"name": "To Magmoor Caverns North", "direction": "north"},
+        {"name": "Vault", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Vault",
+      "edges": [
+        {"name": "Vault Access", "direction": "north"},
+        {"name": "Plaza Access", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Sun Tower",
+      "edges": [
+        {"name": "Sun Tower Access", "direction": "east"},
+        {"name": "To Magmoor Caverns North", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Sun Tower Access",
+      "edges": [
+        {"name": "Sun Tower", "direction": "west"},
+        {"name": "Sunchamber", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Sunchamber",
+      "edges": [
+        {"name": "Sun Tower Access", "direction": "north"},
+        {"name": "Sunchamber Access", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Sunchamber Access",
+      "edges": [
+        {"name": "Sunchamber", "direction": "north"},
+        {"name": "Sunchamber Lobby", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Sunchamber Lobby",
+      "edges": [
+        {"name": "Sunchamber Access", "direction": "north"},
+        {"name": "Arboretum", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Arboretum",
+      "edges": [
+        {"name": "Sunchamber Lobby", "direction": "north"},
+        {"name": "Gathering Hall Access", "direction": "east"},
+        {"name": "Arboretum Access", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Gathering Hall Access",
+      "edges": [
+        {"name": "Gathering Hall", "direction": "east"},
+        {"name": "Arboretum", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Gathering Hall",
+      "edges": [
+        {"name": "Watery Hall Access", "direction": "north"},
+        {"name": "East Atrium", "direction": "east"},
+        {"name": "Save Station 2", "direction": "south"},
+        {"name": "Gathering Hall Access", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Watery Hall Access",
+      "edges": [
+        {"name": "Watery Hall", "direction": "north"},
+        {"name": "Gathering Hall", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Watery Hall",
+      "edges": [
+        {"name": "Watery Hall Access", "direction": "south"}
+      ]
+    },
+    {
+      "name": "East Atrium",
+      "edges": [
+        {"name": "Energy Core Access", "direction": "east"},
+        {"name": "Gathering Hall", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Energy Core Access",
+      "edges": [
+        {"name": "Energy Core", "direction": "east"},
+        {"name": "East Atrium", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Energy Core",
+      "edges": [
+        {"name": "Burn Dome Access", "direction": "north"},
+        {"name": "West Furnace Access", "direction": "east"},
+        {"name": "Energy Core Access", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Burn Dome Access",
+      "edges": [
+        {"name": "Burn Dome", "direction": "north"},
+        {"name": "Energy Core", "direction": "south"}
+      ]
+    },
+    {
+      "name": "West Furnace Access",
+      "edges": [
+        {"name": "Furnace", "direction": "east"},
+        {"name": "Energy Core", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Furnace",
+      "edges": [
+        {"name": "East Furnace Access", "direction": "east"},
+        {"name": "West Furnace Access", "direction": "west"}
+      ]
+    },
+    {
+      "name": "East Furnace Access",
+      "edges": [
+        {"name": "Furnace", "direction": "west"},
+        {"name": "Hall of Elders", "direction": "east"}
+      ]
+    },
+    {
+      "name": "Hall of Elders",
+      "edges": [
+        {"name": "Crossway", "direction": "north"},
+        {"name": "Elder Chamber", "direction": "east"},
+        {"name": "Reflecting Pool Access", "direction": "south"},
+        {"name": "East Furnace Access", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Reflecting Pool Access",
+      "edges": [
+        {"name": "Hall of Elders", "direction": "north"},
+        {"name": "Reflecting Pool", "direction": "south"}
+      ]
+    },
+    {
+      "name": "Reflecting Pool",
+      "edges": [
+        {"name": "Reflecting Pool Access", "direction": "north"},
+        {"name": "Antechamber", "direction": "east"},
+        {"name": "Transport Access South", "direction": "south"},
+        {"name": "Save Station 3", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Save Station 3",
+      "edges": [
+        {"name": "Reflecting Pool", "direction": "east"},
+        {"name": "To Tallon Overworld East", "direction": "west"}
+      ]
+    },
+    {
+      "name": "Transport Access South",
+      "edges": [
+        {"name": "Reflecting Pool", "direction": "north"},
+        {"name": "To Tallon Overworld South", "direction": "south"}
+      ]
+    }
+  ]
+}

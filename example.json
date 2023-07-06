@@ -1,0 +1,44 @@
+{
+  "list": [
+    {
+      "name": "To Tallon Overworld South",
+      "edges": [
+        {"name": "Transport Access South", "direction": "north"}
+      ]
+    },
+    {
+      "name": "Transport Access South",
+      "edges": [
+        {"name": "To Tallon Overworld South", "direction": "south"},
+        {"name": "Reflecting Pool", "direction":  "north"}
+      ]
+    },
+    {
+      "name": "Reflecting Pool",
+      "edges": [
+          {"name": "Transport Access South", "direction":  "south"},
+          {"name": "Ante Chamber", "direction":  "east"},
+          {"name": "Save Station 3", "direction":  "west"}
+      ]
+    },
+    {
+      "name": "Ante Chamber",
+      "edges": [
+        {"name": "Reflecting Pool", "direction":  "west"}
+      ]
+    },
+    {
+      "name": "Save Station 3",
+      "edges": [
+        {"name": "Reflecting Pool", "direction":  "east"},
+        {"name": "To Tallon Overworld East", "direction":  "west"}
+      ]
+    },
+    {
+      "name": "To Tallon Overworld East",
+      "edges": [
+        {"name": "Save Station 3", "direction":  "east"}
+      ]
+    }
+  ]
+}

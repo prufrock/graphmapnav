@@ -1,0 +1,19 @@
+{
+  "list": [
+    {
+      "name": "Reflecting Pool",
+      "position": [0.0, 0.0],
+      "edges": [
+        {
+          "name": "Ante Chamber",
+          "direction": "west"
+        }
+      ]
+    },
+    {
+      "name": "Ante Chamber",
+      "position": [],
+      "edges": []
+    }
+  ]
+}
