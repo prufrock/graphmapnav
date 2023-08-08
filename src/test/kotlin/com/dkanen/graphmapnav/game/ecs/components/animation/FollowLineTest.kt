@@ -9,7 +9,7 @@ import com.dkanen.graphmapnav.game.ecs.entities.eslug
 import com.dkanen.graphmapnav.game.ecs.messages.UpdatePosition
 import com.dkanen.graphmapnav.inputNoChange
 import com.dkanen.graphmapnav.inputTimeStep
-import com.dkanen.graphmapnav.math.Vector2O
+import com.dkanen.graphmapnav.math.Vector20
 import com.dkanen.graphmapnav.smallTestWorld
 import org.junit.jupiter.api.Test
 
@@ -28,12 +28,12 @@ class FollowLineTest {
             direction = Vector2(1.0, 0.0)
         )
 
-        val mockComponent = MockComponent(entity.slug, Vector2O())
+        val mockComponent = MockComponent(entity.slug, Vector20())
         entity.components += mockComponent
 
         entity.update(smallTestWorld(), GameInput(clickedEntity = null, input = inputNoChange()))
 
-        assertEquals(Vector2O(), mockComponent.currentPosition)
+        assertEquals(Vector20(), mockComponent.currentPosition)
 
         entity.update(smallTestWorld(), GameInput(clickedEntity = null, input = inputTimeStep(1.0)))
 

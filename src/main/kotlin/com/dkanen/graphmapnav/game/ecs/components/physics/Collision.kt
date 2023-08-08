@@ -10,7 +10,7 @@ import com.dkanen.graphmapnav.game.ecs.messages.CollidedSet
 import com.dkanen.graphmapnav.game.ecs.messages.CollidedWith
 import com.dkanen.graphmapnav.game.ecs.messages.UpdatePosition
 import com.dkanen.graphmapnav.game.event.Event
-import com.dkanen.graphmapnav.math.Vector2O
+import com.dkanen.graphmapnav.math.Vector20
 import org.openrndr.math.Vector2
 
 data class Collision(override val entitySlug: EntitySlug, var position: Vector2, val radius: Double, val parent: Entity? = null, val collisionResponse: Boolean = false) : Component {
@@ -18,7 +18,7 @@ data class Collision(override val entitySlug: EntitySlug, var position: Vector2,
     val parentPosition: Vector2
         get() {
             // TODO: need a single place to get the position from
-            return parent?.collision?.position ?: parent?.graphics?.position ?: Vector2O()
+            return parent?.collision?.position ?: parent?.graphics?.position ?: Vector20()
         }
 
     val rect: Rect
@@ -33,14 +33,14 @@ data class Collision(override val entitySlug: EntitySlug, var position: Vector2,
         if (collisionResponse) {
             var attempts = 10
             var intersection = world.entityManager.largestIntersection(this)
-            var totalIntersection = Vector2O()
+            var totalIntersection = Vector20()
             while (attempts > 0 && intersection != null) {
                 totalIntersection -= intersection
                 position -= intersection
                 attempts -= 1
                 intersection = world.entityManager.largestIntersection(this)
             }
-            if (totalIntersection != Vector2O()) {
+            if (totalIntersection != Vector20()) {
                 entity.receive(UpdatePosition(totalIntersection, this))
             }
         }

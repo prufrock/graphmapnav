@@ -12,7 +12,7 @@ import com.dkanen.graphmapnav.game.ecs.components.graphics.Graphics
 import com.dkanen.graphmapnav.game.ecs.components.physics.Collision
 import com.dkanen.graphmapnav.game.ecs.entities.Entity
 import com.dkanen.graphmapnav.game.ecs.entities.EntitySlug
-import com.dkanen.graphmapnav.math.Vector2O
+import com.dkanen.graphmapnav.math.Vector20
 import org.openrndr.color.ColorRGBa
 import org.openrndr.math.Vector2
 
@@ -45,15 +45,15 @@ interface EntityManager {
     fun find(slug: EntitySlug): Entity?
     fun finalizeTick()
 
-    fun createAnimatedDecoration(slug: EntitySlug, position: Vector2 = Vector2O(), radius: Double = 0.5, colorStroke: ColorRGBa = ColorRGBa.BLACK, colorFill: ColorRGBa = ColorRGBa.WHITE): Entity
+    fun createAnimatedDecoration(slug: EntitySlug, position: Vector2 = Vector20(), radius: Double = 0.5, colorStroke: ColorRGBa = ColorRGBa.BLACK, colorFill: ColorRGBa = ColorRGBa.WHITE): Entity
 
     fun createAnimatedProp(
         slug: EntitySlug,
-        position: Vector2 = Vector2O(),
+        position: Vector2 = Vector20(),
         radius: Double = 0.5,
         colorStroke: ColorRGBa = ColorRGBa.BLACK,
         colorFill: ColorRGBa = ColorRGBa.WHITE,
-        direction: Vector2 = Vector2O(),
+        direction: Vector2 = Vector20(),
         speed: Double = 0.0
     ): Entity
 
@@ -63,7 +63,7 @@ interface EntityManager {
     fun createProp(slug: EntitySlug, collision: Collision, graphicsComponent: Graphics): Entity
     fun createToggleButton(slug: EntitySlug, position: Vector2, radius: Double, toggleButtonCfg: ToggleButtonCfg): Entity
     fun createTapButton(slug: EntitySlug, position: Vector2, radius: Double, tapButtonCfg: TapButtonCfg): Entity
-    fun createFromGraph(name: String, graph: Graph<Node<String>>, origin: Vector2 = Vector2O())
+    fun createFromGraph(name: String, graph: Graph<Node<String>>, origin: Vector2 = Vector20())
 
     // Entity Table
     fun update(world: World, gameInput: GameInput)

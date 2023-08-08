@@ -9,7 +9,7 @@ import com.dkanen.graphmapnav.game.ecs.entities.EntitySlug
 import com.dkanen.graphmapnav.game.ecs.messages.UpdateEnd
 import com.dkanen.graphmapnav.game.ecs.messages.UpdatePosition
 import com.dkanen.graphmapnav.game.ecs.messages.UpdateStart
-import com.dkanen.graphmapnav.math.Vector2O
+import com.dkanen.graphmapnav.math.Vector20
 import org.openrndr.color.ColorRGBa
 import org.openrndr.extra.color.presets.WHITE_SMOKE
 import org.openrndr.math.Matrix33
@@ -17,7 +17,7 @@ import org.openrndr.math.Vector2
 
 class RndrGraphics(
     override val entitySlug: EntitySlug,
-    override var position: Vector2 = Vector2O(),
+    override var position: Vector2 = Vector20(),
     override var radius: Double = 0.5,
     override var model: Model = Point(),
     override var colorFill: ColorRGBa = ColorRGBa.WHITE_SMOKE,
@@ -27,8 +27,8 @@ class RndrGraphics(
     override var worldToScreen: Matrix33 = Matrix33.IDENTITY,
     override val modelToUpRightMatrix: Matrix33 = Matrix33.IDENTITY,
     override var uprightToWorldMatrix: Matrix33 = Matrix33.IDENTITY,
-    override var start: Vector2 = Vector2O(),
-    override var end: Vector2 = Vector2O(),
+    override var start: Vector2 = Vector20(),
+    override var end: Vector2 = Vector20(),
     override var parent: Entity? = null,
 ) : Graphics {
 

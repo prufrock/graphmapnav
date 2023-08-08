@@ -1,5 +1,6 @@
-package com.dkanen.graphmapnav.game.graph
+package com.dkanen.graphmapnav.game.graph.Positioner
 
+import com.dkanen.graphmapnav.game.graph.JsonGraphNodeList
 import com.fasterxml.jackson.databind.MapperFeature
 import com.fasterxml.jackson.module.kotlin.jacksonMapperBuilder
 import com.fasterxml.jackson.module.kotlin.readValue
@@ -19,7 +20,7 @@ class PositionerTest {
 
     @Test
     fun oneNode() {
-        val positioner = Positioner()
+        val positioner = CardinalDirectionPositioner()
 
         val mapGraph = positioner.position(oneNode)
 
@@ -28,7 +29,8 @@ class PositionerTest {
 
     @Test
     fun twoNode() {
-        val positioner = Positioner()
+        val positioner = CardinalDirectionPositioner()
+
         val testList: List<Pair<JsonGraphNodeList, Vector2>> = listOf(
             Pair(twoNodeEast, Vector2(1.0, 0.0)),
             Pair(twoNodeSouth, Vector2(0.0, 1.0)),
@@ -56,7 +58,8 @@ class PositionerTest {
     fun ensureThreeConnectedNodesArePositionedCorrectly() {
        val threeNode = threeNodeLineWest
 
-        val positioner = Positioner()
+        val positioner = CardinalDirectionPositioner()
+
         val mapGraph = positioner.position(threeNode)
 
         assertEquals(3, mapGraph.allVertices.size)
@@ -81,7 +84,8 @@ class PositionerTest {
     fun doNotDuplicateNodes() {
         val nodeList = twoNodeDoubleLink
 
-        val positioner = Positioner()
+        val positioner = CardinalDirectionPositioner()
+
         val mapGraph = positioner.position(nodeList)
 
         assertEquals(2, mapGraph.allVertices.count())

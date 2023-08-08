@@ -4,7 +4,8 @@ import com.dkanen.graphmapnav.game.*
 import com.dkanen.graphmapnav.game.actor.*
 import com.dkanen.graphmapnav.game.ecs.components.graphics.renderModel
 import com.dkanen.graphmapnav.game.graph.JsonGraphNodeList
-import com.dkanen.graphmapnav.game.graph.Positioner
+import com.dkanen.graphmapnav.game.graph.Positioner.CardinalDirectionPositioner
+import com.dkanen.graphmapnav.game.graph.Positioner.Positioner
 import com.dkanen.graphmapnav.math.*
 import com.dkanen.graphmapnav.openrndr.ArgsHolder
 import com.dkanen.graphmapnav.openrndr.FontBook
@@ -18,7 +19,6 @@ import kotlinx.cli.required
 import org.openrndr.*
 import org.openrndr.color.ColorRGBa
 import org.openrndr.draw.loadFont
-import org.openrndr.draw.loadImage
 import org.openrndr.extra.olive.oliveProgram
 import org.openrndr.math.Vector2
 import java.io.File
@@ -72,7 +72,7 @@ fun main(args: Array<String>) = application {
         val cameraWidth = 8.0
         val cameraHeight = 8.0
         // remember these are in world space!
-        val entityGraph = Positioner().position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
+        val entityGraph = CardinalDirectionPositioner().position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
 
         val game = Game(world = World(
             entityGraph = entityGraph,

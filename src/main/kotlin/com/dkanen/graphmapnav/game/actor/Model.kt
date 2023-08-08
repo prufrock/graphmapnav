@@ -3,7 +3,7 @@ package com.dkanen.graphmapnav.game.actor
 import com.dkanen.graphmapnav.game.Game
 import com.dkanen.graphmapnav.game.ecs.components.graphics.Graphics
 import com.dkanen.graphmapnav.game.ecs.components.graphics.renderModel
-import com.dkanen.graphmapnav.math.Vector2O
+import com.dkanen.graphmapnav.math.Vector20
 import com.dkanen.graphmapnav.math.ndcToScreen
 import com.dkanen.graphmapnav.math.p
 import com.dkanen.graphmapnav.openrndr.FontBook
@@ -35,7 +35,7 @@ open class Model {
     }
 
     open fun lineSegment(graphics: Graphics, game: Game, width: Double, height: Double, zoom: Double, fontBook: FontBook): LineSegment {
-        return LineSegment(Vector2O(), Vector2O())
+        return LineSegment(Vector20(), Vector20())
     }
 }
 

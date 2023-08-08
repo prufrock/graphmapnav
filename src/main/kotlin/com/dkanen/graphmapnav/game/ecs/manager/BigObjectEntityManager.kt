@@ -22,7 +22,6 @@ import com.dkanen.graphmapnav.game.ecs.entities.EntitySlug
 import com.dkanen.graphmapnav.game.ecs.entities.eslug
 import com.dkanen.graphmapnav.game.ecs.manager.tables.EntityPool
 import com.dkanen.graphmapnav.game.ecs.manager.tables.EntityTable
-import com.dkanen.graphmapnav.math.Vector2O
 import org.openrndr.color.ColorRGBa
 import org.openrndr.extra.color.presets.BLUE_VIOLET
 import org.openrndr.extra.color.presets.PURPLE

@@ -23,4 +23,4 @@ fun Vector2.ndcToWorld(camera: Camera): Vector2 = (camera.project().inversed * t
 fun Vector2.ndcToWorld(camera: EcsCamera): Vector2 = (camera.worldToNdc.inversed * this.p).xy
 
 fun Vector2.ndcToWorld(camera: EcsCamera, zoom: Double): Vector2 = (camera.viewingTransform(zoom).inversed * this.p).xy
-fun Vector2O() = Vector2(0.0)
+fun Vector20() = Vector2(0.0)

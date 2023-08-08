@@ -9,7 +9,7 @@ import com.dkanen.graphmapnav.game.ecs.components.graphics.Graphics
 import com.dkanen.graphmapnav.game.ecs.components.graphics.RndrGraphics
 import com.dkanen.graphmapnav.game.ecs.components.physics.Collision
 import com.dkanen.graphmapnav.game.ecs.entities.eslug
-import com.dkanen.graphmapnav.math.Vector2O
+import com.dkanen.graphmapnav.math.Vector20
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
@@ -22,7 +22,7 @@ class BigObjectEntityManagerTest {
     fun createDecoration() {
         val manager = BigObjectEntityManager()
 
-        manager.createDecoration("1".eslug, RndrGraphics("1".eslug, Vector2O(), 0.5, Square(), colorStroke = ColorRGBa.BLACK, colorFill = ColorRGBa.BLACK))
+        manager.createDecoration("1".eslug, RndrGraphics("1".eslug, Vector20(), 0.5, Square(), colorStroke = ColorRGBa.BLACK, colorFill = ColorRGBa.BLACK))
         
         assertEquals("1".eslug, manager.activeEntities.first().slug, "Did the decoration get added to the entities?")
     }
@@ -87,10 +87,10 @@ class BigObjectEntityManagerTest {
     fun createFromGraphOneVertex() {
         val manager = BigObjectEntityManager()
         val graph = AdjacencyList<Node<String>>().also {
-            it.createVertex(Node("Tallon Overworld", Vector2O()))
+            it.createVertex(Node("Tallon Overworld", Vector20()))
         }
 
-        manager.createFromGraph("t", graph, Vector2O())
+        manager.createFromGraph("t", graph, Vector20())
 
         assertEquals(2, manager.activeEntities.count(), "Should the node plus the label.")
         assertEquals("t-0".eslug, manager.activeEntities.first().slug)
@@ -110,12 +110,12 @@ class BigObjectEntityManagerTest {
     fun createFromGraphTwoVertices() {
         val manager = BigObjectEntityManager()
         val graph = AdjacencyList<Node<String>>().also {
-            val v0 = it.createVertex(Node("Tallon Overworld", Vector2O()))
-            val v1 = it.createVertex(Node("Magmoor", Vector2O()))
+            val v0 = it.createVertex(Node("Tallon Overworld", Vector20()))
+            val v1 = it.createVertex(Node("Magmoor", Vector20()))
             it.add(EdgeType.DIRECTED, v0, v1, null)
         }
 
-        manager.createFromGraph("t", graph, Vector2O())
+        manager.createFromGraph("t", graph, Vector20())
 
         assertEquals(5, manager.activeEntities.count(), "2 labels 2 nodes 1 edge")
         assertEquals("t-0_edge_t-1_s".eslug, manager.activeEntities[0].slug)

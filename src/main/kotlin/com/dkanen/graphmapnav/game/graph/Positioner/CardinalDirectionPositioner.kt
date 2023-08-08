@@ -1,14 +1,14 @@
-package com.dkanen.graphmapnav.game.graph
+package com.dkanen.graphmapnav.game.graph.Positioner
 
 import com.dkanen.graphmapnav.collections.graphs.AdjacencyList
 import com.dkanen.graphmapnav.collections.graphs.Graph
 import com.dkanen.graphmapnav.collections.graphs.Vertex
 import com.dkanen.graphmapnav.game.Node
-import com.dkanen.graphmapnav.math.Vector2O
+import com.dkanen.graphmapnav.game.graph.JsonGraphNodeList
 import org.openrndr.math.Vector2
 
-class Positioner {
-    fun position(nodeList: JsonGraphNodeList, origin: Vector2 = Vector2O()): Graph<Node<String>> {
+class CardinalDirectionPositioner: Positioner {
+    override fun position(nodeList: JsonGraphNodeList, origin: Vector2): Graph<Node<String>> {
         val finalGraph = AdjacencyList<Node<String>>()
         val vertexIndex = mutableMapOf<String, Vertex<Node<String>>>()
 
@@ -37,8 +37,6 @@ class Positioner {
         return finalGraph
     }
 }
-
-fun Graph<Node<String>>.createVertex(name: String, position: Vector2): Vertex<Node<String>> = createVertex(Node(name, position))
 
 enum class CardinalDirection {
     EAST,

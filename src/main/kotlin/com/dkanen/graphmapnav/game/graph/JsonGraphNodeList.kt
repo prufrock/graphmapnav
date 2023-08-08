@@ -1,5 +1,7 @@
 package com.dkanen.graphmapnav.game.graph
 
+import com.dkanen.graphmapnav.game.graph.Positioner.CardinalDirection
+
 data class JsonGraphNodeList(val list: List<JsonGraphNode>)
 
 data class JsonGraphEdge(val name: String, val direction: CardinalDirection = CardinalDirection.EAST)
