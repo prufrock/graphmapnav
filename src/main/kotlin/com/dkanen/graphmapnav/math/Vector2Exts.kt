@@ -24,3 +24,5 @@ fun Vector2.ndcToWorld(camera: EcsCamera): Vector2 = (camera.worldToNdc.inversed
 
 fun Vector2.ndcToWorld(camera: EcsCamera, zoom: Double): Vector2 = (camera.viewingTransform(zoom).inversed * this.p).xy
 fun Vector20() = Vector2(0.0)
+
+fun Vector2.random(min: Double, max: Double) = Vector2(x = kotlin.random.Random.nextDouble(min, max), y = kotlin.random.Random.nextDouble(min, max))

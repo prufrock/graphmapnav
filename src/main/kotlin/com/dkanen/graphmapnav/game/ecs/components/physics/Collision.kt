@@ -27,7 +27,8 @@ data class Collision(override val entitySlug: EntitySlug, var position: Vector2,
     override fun update(entity: Entity, world: World, input: GameInput) {
         // eventually needs to move in response to input
         if (input.clickedEntity?.slug == entitySlug) {
-            println("clicked $entitySlug")
+            val entity = world.entityManager.activeEntities.firstOrNull { it.slug == entitySlug }
+            println("clicked $entitySlug at ${entity?.collision?.position}")
         }
 
         if (collisionResponse) {
