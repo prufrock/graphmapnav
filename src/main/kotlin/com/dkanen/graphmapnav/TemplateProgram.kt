@@ -6,6 +6,7 @@ import com.dkanen.graphmapnav.game.ecs.components.graphics.Graphics
 import com.dkanen.graphmapnav.game.ecs.components.graphics.renderModel
 import com.dkanen.graphmapnav.game.graph.JsonGraphNodeList
 import com.dkanen.graphmapnav.game.graph.Positioner.CardinalDirectionPositioner
+import com.dkanen.graphmapnav.game.graph.Positioner.ForceDirectedPositioner
 import com.dkanen.graphmapnav.game.graph.Positioner.Positioner
 import com.dkanen.graphmapnav.game.graph.Positioner.RandomPositioner
 import com.dkanen.graphmapnav.math.*
@@ -33,10 +34,10 @@ private const val DRAG_DAMPENER = 250.0
 private const val DRAG_THRESHOLD = 0.004
 
 // Reduces the rate at which the zoom factor changes in response to mouse wheel events.
-private const val ZOOM_DAMPENER = 10
+private const val ZOOM_DAMPENER = 20
 
 // The minimum allowed zoom factor.
-private const val ZOOM_MIN = 0.5
+private const val ZOOM_MIN = 0.001
 
 // The maximum allowed zoom factor.
 private const val ZOOM_MAX = 2.0
@@ -83,7 +84,7 @@ fun main(args: Array<String>) = application {
         val cameraWidth = 8.0
         val cameraHeight = 8.0
         // remember these are in world space!
-        val entityGraph = RandomPositioner(min = 0.0, max = 8.0).position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
+        val entityGraph = ForceDirectedPositioner(min = -12.0, max = 12.0).position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
 
         val game = Game(world = World(
             entityGraph = entityGraph,
