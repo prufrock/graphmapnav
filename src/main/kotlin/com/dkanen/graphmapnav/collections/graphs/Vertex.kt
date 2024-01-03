@@ -5,4 +5,5 @@ package com.dkanen.graphmapnav.collections.graphs
  * Defined as a data class so it can be easily used as a key in a map.
  */
 data class Vertex<T: Any>(val index: Int, val data: T) {
+    override fun hashCode(): Int = index
 }
