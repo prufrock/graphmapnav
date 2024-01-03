@@ -60,37 +60,8 @@ class GridWorld(
             RndrGraphics(
                 entitySlug = "camera1".eslug,
                 position = Vector2(4.0, 4.0),
-                radius = 0.25,
+                radius = 0.0,
                 colorFill = ColorRGBa.GREEN,
-                colorStroke = ColorRGBa.BLACK,
-                model = Point(),
-            )
-        )
-        createProp(
-            "sq1".eslug,
-            Collision(
-                entitySlug = "sq1".eslug,
-                position = Vector2(3.0, 3.0),
-                radius = 0.25,
-                parent = camera
-            ),
-            RndrGraphics(
-                entitySlug = "sq1".eslug,
-                position = Vector2(3.0, 3.0),
-                radius = 0.25,
-                colorFill = ColorRGBa.GREEN,
-                colorStroke = ColorRGBa.BLACK,
-                model = Point(),
-                parent = camera
-            )
-        )
-        createDecoration(
-            "sq2".eslug,
-            RndrGraphics(
-                entitySlug = "sq2".eslug,
-                position = Vector2(4.0, 3.0),
-                radius = 0.25,
-                colorFill = ColorRGBa.PURPLE,
                 colorStroke = ColorRGBa.BLACK,
                 model = Point(),
             )
@@ -189,8 +160,6 @@ class GridWorld(
                 }
             }
         }
-
-        entityManager.createAnimatedDecoration("pew-pew".eslug)
 
         levelCreated = true
     }

@@ -6,6 +6,10 @@ import com.dkanen.graphmapnav.game.ecs.components.graphics.Graphics
 import com.dkanen.graphmapnav.game.ecs.components.graphics.renderModel
 import com.dkanen.graphmapnav.game.graph.JsonGraphNodeList
 import com.dkanen.graphmapnav.game.graph.Positioner.CardinalDirectionPositioner
+import com.dkanen.graphmapnav.game.map.MapData
+import com.dkanen.graphmapnav.game.map.Thing
+import com.dkanen.graphmapnav.game.map.Tile
+import com.dkanen.graphmapnav.game.map.TileMap
 import com.dkanen.graphmapnav.math.*
 import com.dkanen.graphmapnav.openrndr.ArgsHolder
 import com.dkanen.graphmapnav.openrndr.FontBook
@@ -71,21 +75,26 @@ fun main(args: Array<String>) = application {
         val input by parser.option(ArgType.String, shortName = "i", description = "Input file").required()
         parser.parse(ArgsHolder.args)
 
-        val json = File(input).readText()
+        val game = if (!input.contains("grid")) {
+            val json = File(input).readText()
 
-        val mapper = jacksonMapperBuilder().enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS).build()
+            val mapper = jacksonMapperBuilder().enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS).build()
 
-        val graph: JsonGraphNodeList = mapper.readValue(json)
+            val graph: JsonGraphNodeList = mapper.readValue(json)
 
-        // TODO: make the world/camera size configurable
-        val cameraWidth = 8.0
-        val cameraHeight = 8.0
-        // remember these are in world space!
+            // TODO: make the world/camera size configurable
+            val cameraWidth = 8.0
+            val cameraHeight = 8.0
+            // remember these are in world space!
 //        val entityGraph = ForceDirectedPositioner(min = -12.0, max = 12.0).position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
-        val entityGraph = CardinalDirectionPositioner().position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
-        val game = Game(world = GraphWorld(
-            entityGraph = entityGraph,
-        ))
+            val entityGraph = CardinalDirectionPositioner().position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
+            Game(world = GraphWorld(
+                entityGraph = entityGraph,
+            ))
+        } else {
+            makeGame()
+        }
+
         val maximumTimeStep: Double = 1.0 / 20 // cap at a minimum of 20 FPS
         val worldTimeStep: Double = 1.0 / 120 // number of steps to take each frame
         // The last time the frame was updated. Used to determine if interactions like mouse clicks should be considered
@@ -321,4 +330,37 @@ fun main(args: Array<String>) = application {
             fpsIntervalFrameCount++
         }
     }
+}
+
+private fun makeGame(): Game {
+    val n = Thing.NOTHING
+    val p = Thing.PLAYER
+    val w = Tile.WALL
+    val e = Tile.EMPTY
+    val mapData = MapData(width = 8,
+        tiles = listOf(
+            w, w, w, w, w, w, w, w,
+            w, e, e, e, e, e, e, w,
+            w, e, e, e, e, e, e, w,
+            w, e, e, e, e, e, e, w,
+            w, e, e, e, e, e, e, w,
+            w, e, e, e, e, e, e, w,
+            w, e, e, e, e, e, e, w,
+            w, w, w, w, w, w, w, w,
+        ),
+        things = listOf(
+            n, n, n, n, n, n, n, n,
+            n, n, n, n, n, n, n, n,
+            n, n, n, n, n, n, n, n,
+            n, n, n, n, n, n, n, n,
+            n, n, n, n, n, n, n, n,
+            n, n, n, n, n, n, n, n,
+            n, p, n, n, n, n, n, n,
+            n, n, n, n, n, n, n, n,
+        )
+    )
+
+    return Game(world = GridWorld(
+        map = TileMap(mapData),
+    ))
 }
