@@ -1,6 +1,6 @@
 package com.dkanen.graphmapnav.game.event
 
-import com.dkanen.graphmapnav.game.World
+import com.dkanen.graphmapnav.game.GraphWorld
 import com.dkanen.graphmapnav.game.ecs.entities.EntitySlug
 import com.dkanen.graphmapnav.game.ecs.entities.eslug
 
@@ -49,7 +49,7 @@ class Responder<T: Event>(val matcher: Matcher<T>, val action: (T) -> Unit) {
 }
 
 class EventHandler<T: Event>(val responder: Responder<T>) {
-    fun handler(world: World, event: T) {
+    fun handler(world: GraphWorld, event: T) {
         responder.respond(event)
     }
 }

@@ -22,6 +22,8 @@ interface EntityManager {
 
     // Maybe a map if I need to switch cameras by their label?
     val cameras: List<Entity>
+    val activeEntities: List<Entity>
+    val collisions: List<Collision>
 
     fun createDecoration(slug: EntitySlug, graphicsComponent: Graphics): Entity
 

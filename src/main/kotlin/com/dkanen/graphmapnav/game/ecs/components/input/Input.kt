@@ -1,6 +1,7 @@
 package com.dkanen.graphmapnav.game.ecs.components.input
 
 import com.dkanen.graphmapnav.game.GameInput
+import com.dkanen.graphmapnav.game.GraphWorld
 import com.dkanen.graphmapnav.game.World
 import com.dkanen.graphmapnav.game.ecs.components.Component
 import com.dkanen.graphmapnav.game.ecs.entities.Entity

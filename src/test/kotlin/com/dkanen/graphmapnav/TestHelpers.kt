@@ -1,7 +1,6 @@
 package com.dkanen.graphmapnav
 
-import com.dkanen.graphmapnav.game.Camera
-import com.dkanen.graphmapnav.game.World
+import com.dkanen.graphmapnav.game.GraphWorld
 import com.dkanen.graphmapnav.game.map.MapData
 import com.dkanen.graphmapnav.game.map.Thing
 import com.dkanen.graphmapnav.game.map.Tile
@@ -31,11 +30,11 @@ fun map3x3(): TileMap {
 
     return TileMap(mapData)
 }
-fun smallTestWorld() = World(
+fun smallTestWorld() = GraphWorld(
     entityGraph = AdjacencyList(),
     )
 
-fun worldWithMap(map: TileMap) = World(
+fun worldWithMap(map: TileMap) = GraphWorld(
     entityGraph = AdjacencyList(),
 )
 

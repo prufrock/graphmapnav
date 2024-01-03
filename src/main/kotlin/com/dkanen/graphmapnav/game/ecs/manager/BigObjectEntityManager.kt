@@ -6,6 +6,7 @@ import com.dkanen.graphmapnav.collections.graphs.SceneGraph
 import com.dkanen.graphmapnav.collections.graphs.Vertex
 import com.dkanen.graphmapnav.game.GameInput
 import com.dkanen.graphmapnav.game.Node
+import com.dkanen.graphmapnav.game.GraphWorld
 import com.dkanen.graphmapnav.game.World
 import com.dkanen.graphmapnav.game.actor.Label
 import com.dkanen.graphmapnav.game.actor.Line
@@ -32,7 +33,7 @@ import org.openrndr.math.Vector2
  * else where.
  */
 class BigObjectEntityManager(private val entityTable: EntityTable = EntityTable(EntityPool(size = 100))): EntityManager {
-    val activeEntities: List<Entity>
+    override val activeEntities: List<Entity>
         get() = entityTable.activeEntities
 
     override val sceneGraph: Scene
@@ -74,7 +75,7 @@ class BigObjectEntityManager(private val entityTable: EntityTable = EntityTable(
 
     private val inputs: MutableList<Input> = mutableListOf()
 
-    val collisions: List<Collision>
+    override val collisions: List<Collision>
         get() = activeEntities.mapNotNull { it.collision }
 
     init {

@@ -6,9 +6,6 @@ import com.dkanen.graphmapnav.game.ecs.components.graphics.Graphics
 import com.dkanen.graphmapnav.game.ecs.components.graphics.renderModel
 import com.dkanen.graphmapnav.game.graph.JsonGraphNodeList
 import com.dkanen.graphmapnav.game.graph.Positioner.CardinalDirectionPositioner
-import com.dkanen.graphmapnav.game.graph.Positioner.ForceDirectedPositioner
-import com.dkanen.graphmapnav.game.graph.Positioner.Positioner
-import com.dkanen.graphmapnav.game.graph.Positioner.RandomPositioner
 import com.dkanen.graphmapnav.math.*
 import com.dkanen.graphmapnav.openrndr.ArgsHolder
 import com.dkanen.graphmapnav.openrndr.FontBook
@@ -86,7 +83,7 @@ fun main(args: Array<String>) = application {
         // remember these are in world space!
 //        val entityGraph = ForceDirectedPositioner(min = -12.0, max = 12.0).position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
         val entityGraph = CardinalDirectionPositioner().position(graph, Vector2(cameraWidth / 2.0, cameraHeight / 2.0) + Vector2(0.0, 3.5))
-        val game = Game(world = World(
+        val game = Game(world = GraphWorld(
             entityGraph = entityGraph,
         ))
         val maximumTimeStep: Double = 1.0 / 20 // cap at a minimum of 20 FPS

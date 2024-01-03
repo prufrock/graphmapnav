@@ -4,11 +4,8 @@ import com.dkanen.graphmapnav.game.GameInput
 import com.dkanen.graphmapnav.game.World
 import com.dkanen.graphmapnav.game.ecs.components.Component
 import com.dkanen.graphmapnav.game.ecs.components.cameras.Camera
-import com.dkanen.graphmapnav.game.ecs.components.behaviors.Edge
 import com.dkanen.graphmapnav.game.ecs.components.graphics.Graphics
-import com.dkanen.graphmapnav.game.ecs.components.input.Input
 import com.dkanen.graphmapnav.game.ecs.components.physics.Collision
-import com.dkanen.graphmapnav.game.ecs.components.animation.FollowLine
 import com.dkanen.graphmapnav.game.ecs.messages.Message
 
 /**
